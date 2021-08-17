@@ -1,39 +1,40 @@
 package kakao2019;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collector;
 
 public class ait {
-    static class a {
-        int a;
-        int b;
 
-        public a(int a, int b) {
-            this.a = a;
-            this.b = b;
+    static void test1(int k, int[] a) {
+        for (int i = 0; i < a.length; i++) {
+            a[i] = k;
+        }
+        if (k > 0) {
+            k = 5;
         }
     }
 
+    static int test2(int k) {
+        k = 5;
+        return k;
+    }
 
     public static void main(String[] args) {
-        List<a> list = new ArrayList<>();
-        int total = 5;
-        int[] stage = {5,4,2,3,3};
-        int[] user = new int[5];
-        for (int i = 0; i<5; i++) {
-            user[i] = stage[i];
-        }
+
+        int k = 1;
+        int[] a = new int[5];
         for (int i = 0; i < 5; i++) {
-            if (user[i] == 0) {
-                list.add(new a(1, 0));
-            } else {
-                list.add(new a(i + 1, stage[i]));
-            }
+            a[i] = i;
         }
-        for (a s : list) {
-            System.out.println(s.a);
+        for (int ans : a) {
+            System.out.print(ans);
         }
-        System.out.println(list.get(1).a);
+        System.out.println();
+        test1(k, a);
+        for (int ans : a) {
+            System.out.print(ans);
+        }
+        System.out.println(k);
+
     }
 }
