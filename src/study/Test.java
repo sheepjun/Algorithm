@@ -1,15 +1,14 @@
 package study;
 
 import java.util.ArrayList;
+import java.util.Stack;
 
 public class Test {
     public static void main(String[] args) {
-        ArrayList<ArrayList<Integer>> a = new ArrayList<>();
-        a.add(new ArrayList<>());
-        a.add(new ArrayList<>());
-        a.get(0).add(1);
-        a.get(1).add(0);
-        System.out.println(a.get(0).get(0));
-        System.out.println(a.get(1).get(0));
+        Stack<Integer> st = new Stack<>();
+        st.push(1);
+        st.push(2);
+        System.out.println(st.peek());
+        System.out.println(st.size());
     }
 }
